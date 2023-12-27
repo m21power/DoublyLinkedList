@@ -28,6 +28,26 @@ class DLinked:
                     iter=iter.next
                 iter.next=new_node
                 new_node.prev=iter
+    def Insert_Beg(self,data):
+        new_node=Node(data)
+        a=self.head
+        self.head=new_node
+        new_node.next=a
+    def Insert_pos(self,data,p):
+        c=0
+        new_node=Node(data)
+        iter=self.head
+        pr=None
+        while iter:
+            c+=1
+            pr=iter
+            iter=iter.next
+            if c==p:
+                a=iter
+                pr.next=new_node
+                new_node.next=a
+                new_node.prev=pr
+                break
     def printing(self):
         cur=self.head
         while cur:
